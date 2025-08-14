@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Agro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Portal Agro</div>
+        <nav>
+            <ul>
+                <li><a href="#">INÍCIO</a></li>
+                <li><a href="#">CADASTRO</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="left-column">
+            <div class="tips-section">
+                <h2>Dica Agronômica da Semana</h2>
+                <p>
+                    "A adubação de cobertura é crucial para o desenvolvimento do milho. Realize a aplicação de nitrogênio na fase V4-V6 para maximizar a absorção e o potencial de produtividade."
+                </p>
+            </div>
+
+            <div class="news-section">
+                <h2>Notícias Sobre o Mercado Agro</h2>
+                <p class="lorem-ipsum">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>Calculadora de Insumos - Milho (Demo)</h2>
+            <div id="calculator-inputs">
+                <div class="input-group">
+                    <label for="yield">Produtividade Esperada (sacos/ha):</label>
+                    <input type="number" id="yield" name="yield" value="120" min="0">
+                </div>
+                <h3>Análise do Solo (Valores Demonstrativos)</h3>
+                <div class="input-group">
+                    <label for="n">N (Nitrogênio):</label>
+                    <input type="number" id="n" name="n" value="0" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="p">P (Fósforo):</label>
+                    <input type="number" id="p" name="p" value="0" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="k">K (Potássio):</label>
+                    <input type="number" id="k" name="k" value="0" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="ca">Ca (Cálcio):</label>
+                    <input type="number" id="ca" name="ca" value="0" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="mg">Mg (Magnésio):</label>
+                    <input type="number" id="mg" name="mg" value="0" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="s">S (Enxofre):</label>
+                    <input type="number" id="s" name="s" value="0" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="micro">Micronutrientes:</label>
+                    <input type="text" id="micro" name="micro" value="Ajustar conforme análise">
+                </div>
+                <button type="button" onclick="calculate()">Calcular Recomendação</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Relatório de Insumos</h3>
+            <pre id="modalText"></pre>
+            <button id="downloadBtn">Baixar Relatório</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

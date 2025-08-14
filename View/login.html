@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Portal Agro</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Área do Cliente</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Usuário ou E-mail" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Senha" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="errorMessage" class="error-message"></p>
+        <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
