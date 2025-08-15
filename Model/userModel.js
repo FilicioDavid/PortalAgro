@@ -1,15 +1,22 @@
 // Model/userModel.js
+const bcrypt = require('bcrypt');
 
-// Exemplo de dados estáticos para testar
+// Usuários estáticos apenas para teste. Em produção, use um banco de dados.
+const seedPassword = 'admin123';
+const saltRounds = 10;
+
+// Gera o hash apenas uma vez no primeiro require.
+let passwordHash = bcrypt.hashSync(seedPassword, saltRounds);
+
 const users = [
-    { id: 1, username: 'admin', password: 'admin123' },
+  { id: 1, username: 'admin', passwordHash }
 ];
 
-exports.findByUsername = async (username) => {
-    // Em um projeto real, você faria uma consulta no banco de dados aqui.
-    // const [user] = await db.query('SELECT * FROM users WHERE username = ?', [username]);
-    // return user;
-
-    // Por enquanto, usamos a lista estática
-    return users.find(user => user.username === username);
+/**
+ * Retorna o usuário pelo username
+ * @param {string} username
+ * @returns {{id:number, username:string, passwordHash:string}|undefined}
+ */
+exports.getUserByUsername = (username) => {
+  return users.find(u => u.username === username);
 };

@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert(data.message);
                     
                     // --- AQUI É O REDIRECIONAMENTO ---
-                    window.location.href = '/home.html';
+                    window.location.href = 'home.html';
                     
                 } else {
                     // Login falhou
